@@ -2,17 +2,7 @@ import React, { Component } from 'react';
 import * as XLSX from 'xlsx';
 import "./XlsxFile.css";
 
-class XlsxFile extends React.Component {
- 
-  constructor(props: any) {
-    super(props)
-    this.state = {
-      file: null,
-      lines: Array
-    }
-  }
-
-  showFile = async (e: any) => {
+export default function showFile (e: any) {
     var file = e.target.files[0];
     // input canceled, return
     if (!file) return;
@@ -48,7 +38,4 @@ class XlsxFile extends React.Component {
         <div id="show-text">Choose text File</div> */}
       </div>
     )
-    }
 }
-
-export default XlsxFile

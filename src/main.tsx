@@ -4,8 +4,12 @@ import App from './App'
 import Map from './Map'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './Main.css'
+import { createRoot } from "react-dom/client"
 
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container!);
+
+root.render(
   <BrowserRouter>
   <Routes>
     <Route path='App' element={<App />} />    
@@ -13,4 +17,4 @@ ReactDOM.render(
     <Route path='Map' element={<Map />} />    
   </Routes>
   </BrowserRouter>
-, document.getElementById("root"))
+)
