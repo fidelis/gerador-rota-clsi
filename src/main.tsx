@@ -1,16 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
+import Map from './Map'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './Main.css'
 
-// ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-//   <React.StrictMode>
-//     <Map />
-//   </React.StrictMode>
-// )
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+  <BrowserRouter>
+  <Routes>
+    <Route path='App' element={<App />} />    
+    <Route path='/' element={<App />} />    
+    <Route path='Map' element={<Map />} />    
+  </Routes>
+  </BrowserRouter>
+, document.getElementById("root"))
