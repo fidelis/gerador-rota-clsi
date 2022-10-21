@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: rgb(24, 75, 20);
 }
 
 .impRota {
@@ -24,4 +25,8 @@
   outline: none;
   color: #5c8599;
   padding: 3px 12px;
+}
+
+.App {
+  color: #cac8c8;
 }
