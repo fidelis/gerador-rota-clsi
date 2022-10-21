@@ -27,7 +27,7 @@ export default function App() {
       </div>
       <div className="newRoute"> 
         <label className="custom-file-upload">
-          <input type="file" onClick={(e) => XlsxFile.showFile(e)}/>
+          <input type="file" onClick={event =>  window.location.href='/Map'}/>
           <i className="fa-cloud-upload"></i> Gerar Rota
         </label>
       </div>
