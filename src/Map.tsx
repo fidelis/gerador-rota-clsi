@@ -1,6 +1,6 @@
 import "leaflet/dist/leaflet.css";
 
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useState, useMemo, useRef, useCallback } from "react";
 import { MapContainer as Leafletmap, Marker, Popup, TileLayer } from "react-leaflet";
 import Leaflet from "leaflet";
 import { v4 as uuidv4 } from "uuid";
@@ -9,6 +9,8 @@ import { fetchLocalMapBox } from "./apiMapBox";
 import AsyncSelect from "react-select/async";
 
 import mapPin from "./assets/pin.svg";
+
+import './Map.css'
 
 const VITE_ACCESS_TOKEN_MAP_BOX = import.meta.env.VITE_ACCESS_TOKEN_MAP_BOX; 
 
@@ -51,7 +53,7 @@ function Map() {
 
   const [location, setLocation] = useState(initialPosition);
 
-  const [fiscalID, setFiscalID] = useState(0);
+  const [fiscalID, setFiscalID] = useState<number>(0);
 
   const loadOptions = async (inputValue: any, callback: any) => {
     const response = await fetchLocalMapBox(inputValue);
@@ -67,6 +69,12 @@ function Map() {
     });
 
     callback(places);
+  };
+
+  const handleChange = (event: any) => {
+    const result = event.target.value.replace(/\D/g, '');
+
+    return result;
   };
 
   const handleChangeSelect = (event: any) => {
@@ -97,7 +105,7 @@ function Map() {
         complement,
         latitude: location.lat,
         longitude: location.lng,
-        fiscalID,
+        fiscalID: fiscalID?.valueOf(),
       },
     ]);
 
@@ -131,7 +139,7 @@ function Map() {
                 id="fiscalID"
                 placeholder="Digite o CNPJ ou CPF"
                 value={fiscalID}
-                onChange={(event) => setFiscalID(event.target.value)}
+                onChange={(event) => setFiscalID(handleChange(event))}
               />
             </div>
 
@@ -178,6 +186,7 @@ function Map() {
         {position && (
           <Marker
             icon={mapPinIcon}
+            draggable={true}
             position={[position.latitude, position.longitude]}
           ></Marker>
         )}
