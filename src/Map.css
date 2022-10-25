@@ -1,4 +1,11 @@
 /* map.css */
+#root {
+  max-width: 1280px;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  color: #5c8599;
+}
 
 #page-map {
   width: 98vw;

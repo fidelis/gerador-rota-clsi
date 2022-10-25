@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import * as XLSX from 'xlsx';
-import "./XlsxFile.css";
 
 export default function showFile (e: any) {
     var file = e.target.files[0];
