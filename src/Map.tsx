@@ -10,8 +10,6 @@ import AsyncSelect from "react-select/async";
 
 import mapPin from "./assets/pin.svg";
 
-import "./Map.css";
-
 const VITE_ACCESS_TOKEN_MAP_BOX = import.meta.env.VITE_ACCESS_TOKEN_MAP_BOX; 
 
 
