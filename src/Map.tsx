@@ -71,12 +71,6 @@ function Map() {
     callback(places);
   };
 
-  const handleChange = (event: any) => {
-    const result = event.target.value.replace(/\D/g, '');
-
-    return result;
-  };
-
   const handleChangeSelect = (event: any) => {
     setPosition({
       longitude: event.coords[0],
@@ -136,10 +130,11 @@ function Map() {
             <div className="input-block">
               <label htmlFor="fiscalID">CNPJ/CPF</label>
               <input
+                type="number"
                 id="fiscalID"
                 placeholder="Digite o CNPJ ou CPF"
                 value={fiscalID}
-                onChange={(event) => setFiscalID(handleChange(event))}
+                onChange={(e) => setFiscalID(e.target.valueAsNumber)}
               />
             </div>
 
