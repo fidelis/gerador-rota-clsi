@@ -166,7 +166,7 @@ function Map() {
         </form>
       </main>
 
-      <Leafletmap
+      <Leafletmap className="leaflet-container"
         center={location}
         zoom={15}
         style={{ width: "100%", height: "100%" }}

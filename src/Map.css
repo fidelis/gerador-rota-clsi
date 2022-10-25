@@ -1,14 +1,14 @@
 /* map.css */
 
 #page-map {
-  width: 100vw;
-  height: 100vh;
+  width: 98vw;
+  height: 96vh;
 
   background: #bcd9eb;
   border: 1px solid #bcd9eb;
   border-radius: 30px;
 
-  padding: 40px 80px;
+  padding: 10px 10px;
 
   z-index: 1;
 }
@@ -23,7 +23,7 @@ form.landing-page-form {
   padding: 20px 40px;
 
   position: absolute;
-  top: 10px;
+  top: 20px;
   left: 10px;
 
   z-index: 1;
@@ -57,8 +57,8 @@ form.landing-page-form .input-block + .input-block {
 form.landing-page-form .input-block label {
   display: flex;
   color: #5c8599;
-  margin-bottom: 4px;
-  line-height: 16px;
+  margin-bottom: 8px;
+  line-height: 8px;
 }
 
 form.landing-page-form .input-block label span {
@@ -70,7 +70,7 @@ form.landing-page-form .input-block label span {
 
 form.landing-page-form .input-block input {
   width: 100%;
-  background: #c3ced4;
+  background: #d7e1e7;
   border: 1px solid #d3e2e5;
   border-radius: 10px;
   outline: none;
@@ -79,7 +79,7 @@ form.landing-page-form .input-block input {
 
 form.landing-page-form .input-block input {
   height: 32px;
-  padding: 0 16px;
+  padding: 4 16px;
 }
 
 form.landing-page-form button.confirm-button {
@@ -89,9 +89,9 @@ form.landing-page-form button.confirm-button {
   height: 44px;
   border: 0;
   cursor: pointer;
-  background-color: #bcd9eb;
+  background-color: #1d20d4;
   border-radius: 20px;
-  color: #5c8599;
+  color: #ffffff;
   font-weight: 800;
 
   transition: background-color 0.2s;
@@ -150,3 +150,4 @@ form.landing-page-form button.confirm-button:hover {
   background: #d3e2e5 !important;
   color: #010101 !important;
 }
+ 
