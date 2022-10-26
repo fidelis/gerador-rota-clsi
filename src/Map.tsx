@@ -169,13 +169,13 @@ function Map() {
 
       <Leafletmap className="leaflet-container"
         center={location}
-        zoom={15}
+        zoom={20}
         style={{ width: "100%", height: "100%" }}
       >
         {/* <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" /> */}
         <TileLayer
           // url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${"pk.eyJ1IjoibWFyZ29maSIsImEiOiJja2dhdm5tcmMwOHBnMnJtejA3NXYyMHZwIn0.oL7DRMPMYDab2K6xv8elSA"}`}
-          url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${VITE_ACCESS_TOKEN_MAP_BOX}`}
+          url={`https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${VITE_ACCESS_TOKEN_MAP_BOX}`}
         />
 
         {position && (
