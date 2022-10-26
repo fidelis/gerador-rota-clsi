@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as XLSX from 'xlsx';
 
-export default function showFile (e: any) {
+function showFile (e: any) {
     var file = e.target.files[0];
     // input canceled, return
     if (!file) return;
@@ -38,3 +38,5 @@ export default function showFile (e: any) {
       </div>
     )
 }
+
+export default showFile;

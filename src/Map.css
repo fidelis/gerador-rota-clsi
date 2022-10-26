@@ -4,7 +4,7 @@
   margin: 0;
   padding: 10px;
   text-align: center;
-  color: #5c8599;
+  color: #0d0d0e;
 }
 
 #page-map {
@@ -18,6 +18,7 @@
   padding: 10px 10px;
 
   z-index: 1;
+
 }
 
 form.landing-page-form {
@@ -34,10 +35,15 @@ form.landing-page-form {
   left: 10px;
 
   z-index: 1;
+  
 }
 
 #page-map .leaflet-container {
   z-index: 0;
+}
+
+#page-map .leaflet-tile {
+  filter: hue-rotate(45deg) !important;
 }
 
 form.landing-page-form fieldset {
@@ -77,7 +83,7 @@ form.landing-page-form .input-block label span {
 
 form.landing-page-form .input-block input {
   width: 100%;
-  background: #d7e1e7;
+  background: #eef1f3;
   border: 1px solid #d3e2e5;
   border-radius: 10px;
   outline: none;
@@ -111,7 +117,7 @@ form.landing-page-form button.confirm-button:hover {
 /* Pop Up - Marker */
 
 #page-map .map-popup .leaflet-popup-content-wrapper {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(207, 243, 243, 0.8);
   border-radius: 20px;
   box-shadow: none;
 }

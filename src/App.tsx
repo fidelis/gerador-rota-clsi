@@ -1,19 +1,40 @@
 import { useState } from 'react'
 import './App.css'
-import XlsxFile from './XlsxFile'
+import loadDeliveryRoute from "./LoadDeliveryRoute"
 import {useNavigate} from "react-router-dom"
+
+interface DeliveryRoute {
+  routeId: number,
+  vehicleId: number,
+  fleetId: number,
+  driverName: string,
+  helper1Name: string,
+  helper2Name: string,
+  helper3Name: string,
+  loadId: string,
+  beggingDate: Date,
+  endingDate: Date,
+}
 
 export default function App() {
   const navigate = useNavigate();
 
+  const onFileChangeCapture = ( e: React.ChangeEvent<HTMLInputElement> ) => {
+    /*Selected files data can be collected here.*/
+    var fileName: any = e.target.files
+    console.log(fileName[0].name)
+  };
+
+  const [, setDeliveries] = useState<Delivery[]>([]);
+  
   return (
     <div className="App">
       <h1>GERADOR DE ROTA CLSI</h1>
       <div className="result"> 
-        <label className="custom-file-upload">
-          <input type="file" onClick={(e) => XlsxFile.showFile(e)}/>
-          <i className="fa-cloud-upload"></i> Carregar Rota
+        <label htmlFor="input-file" className="custom-file-upload">
+          <i className="fa-cloud-upload"></i>Carregar Rota
         </label>
+        <input id="input-file" className="input-file" type="file" onChangeCapture={onFileChangeCapture}/>
       </div>
       <div className='form-rota'>
         <input type="text" className='caixa-texto' defaultValue="Id da Rota" /><br></br>
@@ -28,10 +49,7 @@ export default function App() {
         <input type="text" className='caixa-texto' defaultValue="Data e hora do final"/><br></br>
       </div>
       <div className="newRoute"> 
-        <label className="custom-file-upload">
-          <input type="file" onChange={()=>{navigate("/Map");}} />
-          <i className="fa-cloud-upload"></i> Gerar Rota
-        </label>
+        <button type="button" className='button-create-route' onClick={()=>{navigate("/Map");}}>Gerar Rota</button>
       </div>
     </div>
   )

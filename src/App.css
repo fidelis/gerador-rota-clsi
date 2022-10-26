@@ -1,9 +1,6 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  color: #5c8599;
+.App {
+  display: block;
+  margin-left: 600px;
 }
 
 .impRota {
@@ -34,4 +31,22 @@
 label.custom-file-upload {
   border: 2px solid #658492;
   border-radius: 10px;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  position: relative;
+}
+
+.input-file {
+  display: none;
+}
+
+.button-create-route {
+  background-color: #bcd9eb;
+  border: 2px solid #658492;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  position: relative;
 }
