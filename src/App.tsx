@@ -21,8 +21,9 @@ export default function App() {
 
   const onFileChangeCapture = ( e: React.ChangeEvent<HTMLInputElement> ) => {
     /*Selected files data can be collected here.*/
-    var fileName: any = e.target.files
-    console.log(fileName[0].name)
+    var files: any = e.target.files
+    var fileName: string = files[0].name
+    loadDeliveryRoute(fileName)
   };
 
   const [, setDeliveries] = useState<Delivery[]>([]);
@@ -34,7 +35,7 @@ export default function App() {
         <label htmlFor="input-file" className="custom-file-upload">
           <i className="fa-cloud-upload"></i>Carregar Rota
         </label>
-        <input id="input-file" className="input-file" type="file" onChangeCapture={onFileChangeCapture}/>
+        <input id="input-file" accept='application/xlsx, .xlsx' className="input-file" type="file" onChangeCapture={onFileChangeCapture}/>
       </div>
       <div className='form-rota'>
         <input type="text" className='caixa-texto' defaultValue="Id da Rota" /><br></br>

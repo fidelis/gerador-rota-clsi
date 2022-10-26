@@ -21,8 +21,7 @@ interface DeliveryRoute {
   endingDate: Date,
 }
 
-function loadDeliveryRoute (e: any) {
-  var file = e.target.files[0];
+function loadDeliveryRoute (file: string) {
   console.log(file)
   return
 }
